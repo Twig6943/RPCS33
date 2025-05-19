@@ -23,7 +23,7 @@ env:
 jobs:
   Linux_Build:
     # Only run push event on master branch of main repo, but run all PRs
-    if: github.event_name != 'push' || (github.repository == 'RPCS3/rpcs3' && github.ref_name == 'master')
+    if: github.event_name != 'push' || (github.repository == 'twig6943/rpcs33' && github.ref_name == 'master')
     strategy:
       fail-fast: false
       matrix:
@@ -92,7 +92,7 @@ jobs:
       - name: Deploy master build to GitHub Releases
         if: |
           github.event_name != 'pull_request' &&
-          github.repository == 'RPCS3/rpcs3' &&
+          github.repository == 'twig6943/rpcs33' &&
           github.ref == 'refs/heads/master' &&
           matrix.compiler == 'clang'
         env:
